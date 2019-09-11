@@ -5,7 +5,7 @@ body {
 }
 
 .navbar {
-  background: #fff;
+  background: rgb(214, 5, 22);
   margin-bottom: 20px;
 }
 
@@ -26,7 +26,7 @@ body {
 .search-bar .btn {
   border-radius: 2px;
   border-color: #d3d3d3;
-  background: #f8f8f8;
+  background: #fdfdfd;
   width: 20%;
   margin-left: -1px;
 }

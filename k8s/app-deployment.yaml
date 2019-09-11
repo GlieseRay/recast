@@ -3,16 +3,12 @@ kind: Deployment
 metadata: 
   name: recast-deployment
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: recast
       stage: prod
   revisionHistoryLimit: 5
   strategy:
-    rollingUpdate: 
-      maxSurge: 1
-      maxUnavailable: 0
     type: RollingUpdate
   template:
     metadata:
@@ -22,12 +18,18 @@ spec:
     spec:
       containers:
       - name: recast
-        image: nanook/sample-app:latest
+        image: kfengbest/mst-js-recast
+        imagePullPolicy: Always
         ports:
           - name: http
             containerPort: 8080
+        env:
+        - name: VERSION
+          value: RECAST_VERSION
         resources:
           requests:
             cpu: "100m"
           limits:
-            cpu: "300m"
+            cpu: "300m"  
+
+            
